@@ -27,7 +27,7 @@ class View:
                     print(f"                {ind + 1}.{choice}")
                 print('                ctrl + c: pour quitter')
                 xchoice = int(input())
-                popped = cls.selection_choice.[xchoice - 1].split()[2]
+                popped = cls.selection_choice[xchoice - 1].split()[2]
                 Controller.retrieve_model(popped)
                 print(100 * '-')
                 cls.selection()
@@ -47,10 +47,15 @@ class View:
         if xchoice == 2:
             cls.selection()
         elif xchoice == 1:
-            cls.menu_choice.remove(cls.menu_choice[xchoice - 1])
-            print('Fetching information from : jsonplaceholder.typicode.com ...')
-            Controller.prepare_model('all')
-            cls.menu()
+            # cls.menu_choice.remove(cls.menu_choice[xchoice - 1])
+            try:
+                print('Fetching information from : jsonplaceholder.typicode.com ...')
+                Controller.prepare_model('all')
+                cls.menu()
+            except:
+                print('La base de donnees est deja fournie\n Vous pouvez commencer vos requetes')
+                cls.menu()
+
 
 
 
