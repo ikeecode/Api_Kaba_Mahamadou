@@ -10,7 +10,7 @@ from json import dumps
 import mysql.connector as mc
 import requests
 
-credentials = '/home/kaba/Bureau/projet-mvc/models/my.ini'
+credentials = '/home/kaba/Bureau/Api_Kaba_Mahamadou/models/my.ini'
 
 """
     les methodes de classe prepare_* font des insertions dans la base de donnees
@@ -142,7 +142,8 @@ class Model:
             # create a todo object
             todo_instance = Todo(userId, id, title, completed)
             mycursor.execute(todo_instance.insert())
-
+        cls.close_db()
+        
 
     @classmethod
     def prepare_posts(cls):
