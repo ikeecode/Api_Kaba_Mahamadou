@@ -27,7 +27,7 @@ class View:
                     print(f"                {ind + 1}.{choice}")
                 print('                ctrl + c: pour quitter')
                 xchoice = int(input())
-                popped = cls.selection_choice.pop(xchoice - 1).split()[2]
+                popped = cls.selection_choice.[xchoice - 1].split()[2]
                 Controller.retrieve_model(popped)
                 print(100 * '-')
                 cls.selection()
