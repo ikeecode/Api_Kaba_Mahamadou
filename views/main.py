@@ -26,8 +26,13 @@ class View:
                 for ind, choice in enumerate(cls.selection_choice):
                     print(f"                {ind + 1}.{choice}")
                 print('                ctrl + c: pour quitter')
-                xchoice = int(input())
-                popped = cls.selection_choice[xchoice - 1].split()[2]
+                try:
+                    schoice = int(input())
+                except ValueError:
+                    cls.selection()
+                if schoice == 0:
+                    cls.selection()
+                popped = cls.selection_choice[schoice - 1].split()[2]
                 Controller.retrieve_model(popped)
                 print(100 * '-')
                 cls.selection()
@@ -39,22 +44,26 @@ class View:
 
     @classmethod
     def menu(cls):
-        # while len(menu_choice) > 0:
-        for ind, choice in enumerate(cls.menu_choice):
-            print(f"{ind + 1}.{choice}")
-        xchoice = int(input())
-
-        if xchoice == 2:
-            cls.selection()
-        elif xchoice == 1:
-            # cls.menu_choice.remove(cls.menu_choice[xchoice - 1])
+        xchoice = ''
+        while xchoice == '' or xchoice is not int:
+            for ind, choice in enumerate(cls.menu_choice):
+                print(f"{ind + 1}.{choice}")
             try:
-                print('Fetching information from : jsonplaceholder.typicode.com ...')
-                Controller.prepare_model('all')
+                xchoice = int(input())
+            except ValueError:
                 cls.menu()
-            except:
-                print('La base de donnees est deja fournie\n Vous pouvez commencer vos requetes')
-                cls.menu()
+
+            if xchoice == 2:
+                cls.selection()
+            elif xchoice == 1:
+                # cls.menu_choice.remove(cls.menu_choice[xchoice - 1])
+                try:
+                    print('Fetching information from : jsonplaceholder.typicode.com ...')
+                    Controller.prepare_model('all')
+                    cls.menu()
+                except:
+                    print('La base de donnees est deja fournie\n Vous pouvez commencer vos requetes')
+                    cls.menu()
 
 
 
