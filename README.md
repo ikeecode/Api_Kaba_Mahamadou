@@ -2,7 +2,7 @@
 Api_Kaba_Mahamadou est un projet de la [sonatelAcademy](sonatelacademy.com) de la promo 4
 
 ## Architecture du projet
-###Model
+### Model
 * Dossier *models*
   Dans ce dossier on a toutes les classes strutures des classes:
   * users
@@ -13,7 +13,7 @@ Api_Kaba_Mahamadou est un projet de la [sonatelAcademy](sonatelacademy.com) de l
   * photos
 
 
-###View
+### View
 * Dossier *views*
   Dans ce dossier on a les differents menu pour le coté utilisateur:
   fichier : *main.py*
@@ -21,7 +21,7 @@ Api_Kaba_Mahamadou est un projet de la [sonatelAcademy](sonatelacademy.com) de l
   * le menu de selection
 
 
-###Controller 
+### Controller 
 * Dossier *controllers*
   Dans ce dossier on a le controller qui fait les opérations sur le model:
   fichier : *controller.py*
