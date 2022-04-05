@@ -1,7 +1,8 @@
 # Api_Kaba_Mahamadou
 -
 - 👋 👀 🌱 💞️ 📫
-Api_Kaba_Mahamadou est un mini projet qui couvre:
+-
+- Api_Kaba_Mahamadou est un mini projet qui couvre:
 -    1. Utilisation d'une API en python
 -    2. Programmation Orientée Objet en python
 -    3. Utilisation de mysql.connector
