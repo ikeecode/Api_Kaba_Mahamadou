@@ -3,9 +3,9 @@ from users import Address
 from users import Company
 from todos import Todo
 from posts import Post
-from comments import Comment
 from albums import Album
 from photos import Photo
+from comments import Comment
 from json import dumps
 import mysql.connector as mc
 import requests
@@ -18,15 +18,8 @@ credentials = '/home/kaba/Bureau/Api_Kaba_Mahamadou/models/my.ini'
 """
 
 class Model:
-    # mydb = mc.connect(option_files='my.ini')
-    # mycursor = mydb.cursor()
     api_url    = 'https://jsonplaceholder.typicode.com/'
-    # users      = requests.get(api_url + 'users')   .json()
-    # todos      = requests.get(api_url + 'todos')   .json()
-    # posts      = requests.get(api_url + 'posts')   .json()
-    # comments   = requests.get(api_url + 'comments').json()
-    # albums     = requests.get(api_url + 'albums')  .json()
-    # photos     = requests.get(api_url + 'photos')  .json()
+
     @classmethod
     def api_to_json(cls, url):
         return requests.get(cls.api_url + url).json()
@@ -48,7 +41,11 @@ class Model:
         mycursor.execute(my_class.select())
         result = mycursor.fetchall()
         for res in result:
-            print(res)
+            for e in res:
+                print(str(e).ljust(2), end='|')
+            print()
+            print(100* '_')
+            # print(res)
         print()
 
     @classmethod
@@ -215,15 +212,3 @@ class Model:
             photo_instance = Photo(albumId, id, title, url, thumbnailUrl)
             mycursor.execute(photo_instance.insert())
         cls.close_db()
-
-
-
-
-
-
-
-
-
-
-# # this has to move to the controller
-# Model.retrieve_users()

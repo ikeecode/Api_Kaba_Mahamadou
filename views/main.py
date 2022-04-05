@@ -1,4 +1,3 @@
-# ici on doit mettre l'affichage de notre systeme
 import sys
 sys.path.insert(0, '../controllers/')
 
@@ -68,7 +67,6 @@ class View:
 
 
 
-# this has to be in the views
-# Controller.retrieve_model('users')
 
+# demarrage du programme
 View.menu()
