@@ -10,26 +10,26 @@
 
 ## Architecture du projet
 -  ../Api_Kaba_Mahamadou/
-  ├── controllers
-  │   ├── controller.py
-  │   └── __init__.py
-  │  
-  ├── models
-  │   ├── albums.py
-  │   ├── comments.py
-  │   ├── __init__.py
-  │   ├── models.py
-  │   ├── models.sql
-  │   ├── my.ini
-  │   ├── photos.py
-  │   ├── posts.py
-  │   ├── refactory_of_models.py
-  │   ├── todos.py
-  │   └── users.py
-  ├── README.md
-  ├── refactoring.py
-  └── views
-      └── main.py
+-  ├── controllers
+-  │   ├── controller.py
+-  │   └── __init__.py
+-  │  
+-  ├── models
+-  │   ├── albums.py
+-  │   ├── comments.py
+-  │   ├── __init__.py
+-  │   ├── models.py
+-  │   ├── models.sql
+-  │   ├── my.ini
+-  │   ├── photos.py
+-  │   ├── posts.py
+-  │   ├── refactory_of_models.py
+-  │   ├── todos.py
+-  │   └── users.py
+-  ├── README.md
+-  ├── refactoring.py
+-  └── views
+-      └── main.py
 ___
 ### Model
 * Dossier __*models*__
