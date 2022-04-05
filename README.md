@@ -1,8 +1,8 @@
 # Api_Kaba_Mahamadou
 Api_Kaba_Mahamadou est un mini projet qui couvre:
-_    1. Utilisation d'une API en python
-_    2. Programmation Orientée Objet en python
-_    3. Utilisation de mysql.connector
+-    1. Utilisation d'une API en python
+-    2. Programmation Orientée Objet en python
+-    3. Utilisation de mysql.connector
 
 ## Architecture du projet
 ___
