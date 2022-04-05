@@ -1,5 +1,5 @@
 # Api_Kaba_Mahamadou
-Api_Kaba_Mahamadou est un projet de la [sonatelAcademy](sonatelacademy.com) de la promo 4
+Api_Kaba_Mahamadou est un projet de la *[sonatelAcademy]()* de la promo 4
 
 ## Architecture du projet
 ### Model
@@ -21,7 +21,11 @@ Api_Kaba_Mahamadou est un projet de la [sonatelAcademy](sonatelacademy.com) de l
   * le menu de selection
 
 
-### Controller 
+### Controller
 * Dossier *controllers*
   Dans ce dossier on a le controller qui fait les opérations sur le model:
   fichier : *controller.py*
+
+
+Pour executer le projet il faut faire:
+-                                    python3 main.py 
