@@ -27,12 +27,14 @@ class Model:
     # comments   = requests.get(api_url + 'comments').json()
     # albums     = requests.get(api_url + 'albums')  .json()
     # photos     = requests.get(api_url + 'photos')  .json()
+    @classmethod
+    def api_to_json(cls, url):
+        return requests.get(cls.api_url + url).json()
 
     @classmethod
     def init_db(cls):
         cls.mydb = mc.connect(option_files=credentials)
         cls.mycursor = cls.mydb.cursor()
-
         return cls.mycursor
 
     @classmethod
@@ -82,7 +84,7 @@ class Model:
     @classmethod
     def prepare_users(cls):
         mycursor = cls.init_db()
-        users = requests.get(cls.api_url + 'users').json()
+        users = cls.api_to_json('users')
         for user in users:
             id        = user.get('id')
             name      = user.get('name')
@@ -132,7 +134,8 @@ class Model:
     @classmethod
     def prepare_todos(cls):
         mycursor = cls.init_db()
-        todos = requests.get(cls.api_url + 'todos').json()
+        todos = cls.api_to_json('todos')
+
         for todo in todos:
             userId      = todo.get('userId')
             id          = todo.get('id')
@@ -143,12 +146,12 @@ class Model:
             todo_instance = Todo(userId, id, title, completed)
             mycursor.execute(todo_instance.insert())
         cls.close_db()
-        
+
 
     @classmethod
     def prepare_posts(cls):
         mycursor = cls.init_db()
-        posts = requests.get(cls.api_url + 'posts').json()
+        posts = cls.api_to_json('posts')
         for post in posts:
             userId  = post.get('userId')
             id      = post.get('id')
@@ -165,7 +168,7 @@ class Model:
     @classmethod
     def prepare_comments(cls):
         mycursor = cls.init_db()
-        comments   = requests.get(cls.api_url + 'comments').json()
+        comments = cls.api_to_json('comments')
         for comment in comments:
             postId    = comment.get('postId')
             id        = comment.get('id')
@@ -183,7 +186,7 @@ class Model:
     @classmethod
     def prepare_albums(cls):
         mycursor = cls.init_db()
-        albums = requests.get(cls.api_url + 'albums').json()
+        albums = cls.api_to_json('albums')
         for album in albums:
             userId    = album.get('userId')
             id        = album.get('id')
@@ -200,7 +203,7 @@ class Model:
     @classmethod
     def prepare_photos(cls):
         mycursor = cls.init_db()
-        photos = requests.get(cls.api_url + 'photos').json()
+        photos = cls.api_to_json('users')
         for photo in photos:
             albumId         = photo.get('albumId')
             id              = photo.get('id')
