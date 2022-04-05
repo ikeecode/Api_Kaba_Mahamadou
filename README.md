@@ -33,4 +33,5 @@ ___
 
 
 Pour executer le projet il faut faire:
+-                                    cd Api_Kaba_Mahamadou/views
 -                                    python3 main.py
