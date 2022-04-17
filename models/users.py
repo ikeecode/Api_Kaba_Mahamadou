@@ -50,12 +50,14 @@ class Company:
 
 
 class Address:
-    def __init__(self, street='', suite='', city='', zipcode='', geo=''):
+    def __init__(self, street='', suite='', city='', zipcode='', lat='', lng=''):
         self.street     = street
         self.suite      = suite
         self.city       = city
         self.zipcode    = zipcode
-        self.geo        = str(geo)
+        # self.geo        = str(geo)
+        self.lat        = lat
+        self.lng        = lng
 
 
     @classmethod
@@ -65,8 +67,8 @@ class Address:
 
     def insert(self):
         insert_command = f"""
-                INSERT INTO address (street, suite, city, zipcode, geo)
-                VALUES ('{self.street}', '{self.suite}', '{self.city}', '{self.zipcode}', '{self.geo}')
+                INSERT INTO address (street, suite, city, zipcode, lat, lng)
+                VALUES ('{self.street}', '{self.suite}', '{self.city}', '{self.zipcode}', '{self.lat}', '{self.lng}')
         """
 
         return insert_command

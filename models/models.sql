@@ -22,7 +22,8 @@ CREATE TABLE address (
       suite      VARCHAR(255) NOT NULL UNIQUE,
       city       VARCHAR(255) NOT NULL,
       zipcode    VARCHAR(255) NOT NULL,
-      geo        VARCHAR(255) NOT NULL
+      lat        FLOAT NOT NULL,
+      lng        FLOAT NOT NULL
 );
 
 

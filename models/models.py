@@ -10,7 +10,7 @@ from json import dumps
 import mysql.connector as mc
 import requests
 
-credentials = '/home/kaba/Bureau/Api_Kaba_Mahamadou/models/my.ini'
+credentials = '/home/kaba/Bureau/Projets-SA/Api_Kaba_Mahamadou/models/my.ini'
 
 """
     les methodes de classe prepare_* font des insertions dans la base de donnees
@@ -96,10 +96,12 @@ class Model:
             suite   = address.get('suite')
             city    = address.get('city')
             zipcode = address.get('zipcode')
-            geo     = dumps(address.get('geo'))
+            geo     = address.get('geo')
+            lat     = geo.get('lat')
+            lng     = geo.get('lng')
 
             # create an Address object
-            address_instance = Address(street, suite, city, zipcode, geo)
+            address_instance = Address(street, suite, city, zipcode, lat, lng)
             mycursor.execute(address_instance.insert())
 
             # retrieve address identificator
@@ -200,7 +202,7 @@ class Model:
     @classmethod
     def prepare_photos(cls):
         mycursor = cls.init_db()
-        photos = cls.api_to_json('users')
+        photos = cls.api_to_json('photos')
         for photo in photos:
             albumId         = photo.get('albumId')
             id              = photo.get('id')
